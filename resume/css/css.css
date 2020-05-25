@@ -1,0 +1,264 @@
+<style>
+
+
+.allskill
+{
+ width: 90%;
+ height: 500px;
+ background-color: #FFF3B0;
+ margin-left: 70px;
+}
+
+/*columns: 2;
+ column-gap: 2px;
+ column-rule-color:#81B29A;
+ column-rule-style:solid;*/
+
+.skill
+{
+
+ padding: 4px;
+ box-sizing: border-box;
+ border-radius: 50px;
+ padding-top: 15px; /* Add top padding */
+ padding-bottom: 15px; /* Add bottom padding */
+ color: #E2E2DF;
+}
+.sk{
+	width: 50%;
+	height: 100%;
+	padding: 25px 0px 0px 50px ;
+	float: left;
+}
+
+.skills
+{
+	color: #233D4D;
+
+}
+  
+ 
+.skill_level
+{
+ background-color:#364958;
+ border-radius: 50px;
+ text-align: right;
+ height:20px;
+ z-index: 1;
+}
+.C
+{
+ animation-name: skillC;
+ animation-duration: 3s;
+}
+.java
+{
+ animation-name: skilljava;
+ animation-duration: 3s;
+}
+.js
+{
+ animation-name: skilljs;
+ animation-duration: 3s;
+}
+.HTML5
+{
+ animation-name: skillHTML;
+ animation-duration: 3s;
+}
+.CSS3
+{
+ animation-name: skillCSS;
+ animation-duration: 3s;
+}
+.ps
+{
+ animation-name: skillps;
+ animation-duration: 3s;
+}
+@keyframes skillC{
+ 10%{width: 0%}
+ 50%{width: 60%}
+}
+@keyframes skilljava{
+ 0%{width: 0%}
+ 100%{width: 70%}
+}
+@keyframes skilljs{
+ 0%{width: 0%}
+ 100%{width: 70%}
+}
+@keyframes skillHTML{
+ 0%{width: 0%}
+ 100%{width: 90%}
+}
+@keyframes skillCSS{
+ 0%{width: 0%}
+ 100%{width: 85%}
+}
+@keyframes skillps{
+ 0%{width: 0%}
+ 100%{width: 90%}
+}
+
+
+
+#bars {
+	margin: 2em auto;
+	max-width: 1500px;
+	overflow: hidden;
+	float: left;
+	width: 40%;
+	
+}
+
+.bar {
+	float: left;
+	width: 250px;
+	height: 200px;
+	text-align: center;
+	padding: 20px 0px 0px 0px ;
+}
+
+.bar h3 {
+	font-size: 1.4em;
+	font-family: "微軟正黑體";
+	color: #0F4C5C;
+	margin: 0;
+	text-transform: uppercase;
+
+}
+
+.bar-circle {
+	display: block;
+	margin: 3em auto;
+	width: 94px;
+
+}
+
+
+
+.fix
+{
+  width: 100px;
+  height: 500px;
+}
+.about ul
+{
+  list-style: none;
+  line-height: 5;
+}
+
+.e
+{
+	color: #354F52;
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	background-color: #FCF6BD;
+	margin:10px 1050px 10px 35px;
+	padding:10px;
+	border-radius: 5%;
+	width: 300px;
+}
+.ee
+{
+	color: #354F52;
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	background-color: #FCF6BD;
+	margin:10px 1050px 10px 105px;
+	padding:10px;
+	border-radius: 5%;
+	width: 300px;
+}
+.detail
+{
+	font-family: "微軟正黑體";
+	color: #22223B;
+	margin-left: 20px;
+
+}
+
+.eall
+{
+	margin-left: 100px;
+}
+
+.eall2
+{
+	margin-left: 100px;
+}
+.eall3
+{
+	margin-left: 100px;
+}
+.expt
+{
+	width:80%; 
+	height:350px;
+	overflow:hidden;
+	-webkit-column-break-after:always;
+}
+.expt img{transform:scale(1,1);transition: all 1s ease-out;}
+.expt img:hover{transform:scale(1.2,1.2);}
+
+.expt
+{
+	width:80%; 
+	height:350px;
+	-webkit-column-break-after:always;
+}
+
+.experience
+{
+
+	columns: 2;
+	column-rule: solid 1px;
+	column-rule-color: #3E5C76;
+	column-gap: 50px;
+	margin-left: 25px;
+}
+
+.job
+{
+
+	columns: 2;
+	column-rule: solid 1px;
+	column-rule-color: #3E5C76;
+	column-gap: 50px;
+	margin-left: 25px;
+}
+.collect
+{
+
+	columns: 2;
+	column-rule: solid 1px;
+	column-rule-color: #3E5C76;
+	column-gap: 50px;
+	margin-left: 15px;
+}
+.meme{
+	width: 100%;
+}
+.ne1{
+	width: 50%;
+	float: left;
+
+}
+.ne1a{
+margin: 0px 20px 0px 0px;
+}
+.ne2a{
+margin: 0px 20px 0px 0px;
+}
+.ne3a{
+margin: 0px 20px 0px 0px;
+}
+.ne2{
+	width: 50%;
+	float: left;
+}
+
+
+
+</style>

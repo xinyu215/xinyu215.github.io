@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>resume</title>
+
+<link rel="stylesheet" href="css/css.css">
+
+<style>
+	body
+	{
+		background-color: #B2C9AB;
+	}
+	
+		.self
+	{
+		border-style: solid;
+		border-color: #FFF3B0;
+		border-width: 5px;
+		margin: 50px 150px;
+		font-family: "微軟正黑體";
+		font-size: 25px;
+		color: #335C67;
+		float: left;
+		width: 1100px;
+		height: 350px;
+
+	}
+		.selfimg
+		{
+			margin-top: 20px;
+			border:0px;
+			border-radius: 60%;
+			height: 220px;
+			
+		}
+		.introduction
+		{
+			color: #4C5C68;
+			font-family: "微軟正黑體";
+			font-size: 20px;
+		}
+		.me
+		{
+			float: left;
+			width: 50%;
+		}
+		.about
+		{
+			color: #335C67;
+			width: 50%;
+			float: left;
+			margin-top: 80px;
+		}
+
+</style>
+	
+</head>
+
+<body >
+
+<div>
+<script>
+	/* Credits: 
+ * https://www.developphp.com/video/JavaScript/Circular-Progress-Loader-Canvas-JavaScript-Programming-Tutorial
+ */
+
+(function() {
+	
+	var Progress = function( element ) {
+		
+		this.context = element.getContext( "2d" );
+		this.refElement = element.parentNode;
+		this.loaded = 0;
+		this.start = 4.72;
+		this.width = this.context.canvas.width;
+		this.height = this.context.canvas.height;
+		this.total = parseInt( this.refElement.dataset.percent, 10 );
+		this.timer = null;
+		
+		this.diff = 0;
+		
+		this.init();	
+	};
+	
+	Progress.prototype = {
+		init: function() {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.run();	
+			}, 25);
+		},
+		run: function() {
+			var self = this;
+			
+			self.diff = ( ( self.loaded / 100 ) * Math.PI * 2 * 10 ).toFixed( 2 );	
+			self.context.clearRect( 0, 0, self.width, self.height );
+			self.context.lineWidth = 10;
+			self.context.fillStyle = "#002855";
+			self.context.strokeStyle = "#84A98C";
+			self.context.textAlign = "center";
+			
+			self.context.fillText( self.loaded + "%", self.width * .5, self.height * .5 + 2, self.width );
+			self.context.beginPath();
+			self.context.arc( 35, 35, 30, self.start, self.diff / 10 + self.start, false );
+			self.context.stroke();
+			
+			if( self.loaded >= self.total ) {
+				clearInterval( self.timer );
+			}
+			
+			self.loaded++;
+		}
+	};
+	
+	var CircularSkillBar = function( elements ) {
+		this.bars = document.querySelectorAll( elements );
+		if( this.bars.length > 0 ) {
+			this.init();
+		}	
+	};
+	
+	CircularSkillBar.prototype = {
+		init: function() {
+			this.tick = 25;
+			this.progress();
+			
+		},
+		progress: function() {
+			var self = this;
+			var index = 0;
+			var firstCanvas = self.bars[0].querySelector( "canvas" );
+			var firstProg = new Progress( firstCanvas );
+			
+			
+			
+			var timer = setInterval(function() {
+				index++;
+					
+				var canvas = self.bars[index].querySelector( "canvas" );
+				var prog = new Progress( canvas );
+				
+				if( index == self.bars.length ) {
+						clearInterval( timer );
+				} 
+				
+			}, self.tick * 100);
+				
+		}
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		var circularBars = new CircularSkillBar( "#bars .bar" );
+	});
+	
+})();
+</script>
+</div>
+
+
+	
+    <div class="self">
+    
+    <div class="me"><center><img src="img/img1.jpg" class="selfimg" height="200px" width="200px" ></center>
+    	<center><b>卓訢妤<br>Xin Yu, Jwo</b></center>
+    </div>
+
+    	<div class="about">Birth : 2000.02.15 <br>Phone : 0928277386 <br>E-mail : xinxin021555@gmail.com <br>
+	<hr style="width: 92%; margin-left:0px;margin-top: 30px;" color="#5E6472">
+	<div class="meme">
+	<div class="ne1">
+        <a class="ne1a" href="https://www.facebook.com/charlottie.jwo" target="_blank"><img src="img/img2.png" alt="FB" width="50px" heigh="50px"></a>
+		<a class="ne2a" href="https://www.instagram.com/xin_2.15/?hl=zh-tw" target="_blank"><img src="img/img3.png" alt="IG" width="50px" heigh="50px"></a>
+		<a class="ne3a" href="mailto:xinxin021555@gmail.com" target="_blank"><img src="img/img4.png" alt="Email" width="50px" height="50px"></a>
+		</div>
+        <div class="ne2">
+        <input type="button" value="個人網頁"  onclick="location.href='https://xinyu215.github.io/personalpage/xinpersonal.html'" style="border-style:solid;border-color:#D8E2DC;border-radius:10%;font-family: 微軟正黑體;font-size:18px;color:#1C2541;font-weight:bold;width: 100px;height: 50px;background-color: #B2C9AB; "></div>
+        </div>
+        </div>
+	</div>
+    </div>
+
+    <br>
+    <div class="introduction">
+    	<center><b>我是卓訢妤，目前就讀中原大學資訊管理系，由於希望未來可以走有關生物資訊相關，<br>因此輔系生科系。我是個外向活潑、勇於嘗試新事物的人，希望能一步一步實現我的夢想!<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---別在最能吃苦的年紀，選擇了安逸
+    	</b></center>
+    </div>
+
+	<div style="border-top:5px dashed #F1DCA7;height: 10px;overflow:hidden;margin-top: 20px; width: 100% ;"></div>
+
+
+<div class="subtitle"><div style="font-size: 35px;font-style: bold;text-align: center;font-family: Comic Sans MS;color: #22223b;" >Skills</div><br>
+<div class="allskill">
+<div class="sk">
+<p style="margin-left: 60%;">
+<div class="skills">&nbsp;<b>C#</b>
+       <div class="skill">
+        <div class="skill_level C" style="width: 60%">
+         60%&nbsp;&nbsp;
+        </div>
+       </div>
+      </div>
+      <div class="skills">&nbsp;<b>Java</b>
+       <div class="skill ">
+        <div class="skill_level java" style="width: 70%">
+         70%&nbsp;&nbsp;
+        </div>
+       </div>
+      </div>
+      <div class="skills">&nbsp;<b>js</b>
+       <div class="skill ">
+        <div class="skill_level js" style="width: 70%">
+         70%&nbsp;&nbsp;
+        </div>
+       </div>
+      </div>
+      <div class="skills">&nbsp;<b>HTML5</b>
+       <div class="skill ">
+        <div class="skill_level HTML5" style="width: 90%">
+         90%&nbsp;&nbsp;
+        </div>
+       </div>
+      </div>
+      <div class="skills">&nbsp;<b>CSS3</b>
+       <div class="skill ">
+        <div class="skill_level CSS3" style="width: 85%">
+         85%&nbsp;&nbsp;
+        </div>
+       </div>
+      </div>
+      <div class="skills">&nbsp;<b>Photoshop</b>
+       <div class="skill ">
+        <div class="skill_level ps" style="width: 90%">
+         90%&nbsp;&nbsp;
+        </div>
+       </div>
+       </div>
+</p>
+</div>
+	<div id="bars">
+	<div class="bar" data-percent="85">
+		<h3>前端網頁</h3>
+		<canvas class="bar-circle" width="70" height="70"></canvas>
+	</div>
+	<div class="bar" data-percent="62">
+		<h3>後端網頁</h3>
+		<canvas class="bar-circle" width="70" height="70"></canvas>
+	</div>
+	<div class="bar" data-percent="85">
+		<h3>攝影、美工</h3>
+		<canvas class="bar-circle" width="70" height="70"></canvas>
+	</div>
+	<div class="bar" data-percent="82">
+		<h3>表演技能</h3>
+		<canvas class="bar-circle" width="70" height="70"></canvas>
+	</div>
+	
+</div>	
+
+</div>
+
+<div style="border-top:5px dashed #F1DCA7;height: 10px;overflow:hidden;margin-top: 20px; width: 100% ;"></div>
+
+<div class="subtitle"><div style="font-size: 35px;font-style: bold;text-align: center;font-family: Comic Sans MS;color: #22223b;" >Experience</div>
+<br>
+<div class="experience">
+<br>
+<div class="eall">
+	<div class="e"><b><center>管理學 | 機器人學習課程志工</center></b></div>
+	<br>
+		<div class="detail">
+			 先由專業的老師教導我們簡單的程式邏輯、思維，<br>利用好玩的方式很快帶我們進入狀況也有利用這些<br>程式操控國外很夯的機器人，之後再由我們用闖關<br>的方式教導中原幼稚園的小朋友，讓他們及早就有<br>接觸簡單程式思考邏輯的經驗。
+		</div><br>
+		<div class="expt">
+			<img src="img/img5.jpg">
+		</div>
+</div>
+	<br>
+	<div class="eall">
+	<div class="e"><b><center>企業概論 | 黑孩子咖啡義賣</center></b></div>
+	<br>
+		<div class="detail">
+			 由孩子的樹屋的創辦人--陳爸創立的黑孩子咖啡，<br>目的是累積培養弱勢孩子的專業技能。而我們藉由<br>企業概論這門課，一方面幫助他們做義賣、宣揚黑<br>孩子咖啡的名聲，一方面能提升自己各方面的能力<br>，讓我成長多。
+		</div><br>
+		<div class="expt">
+			<img src="img/img6.jpg">
+		</div>
+</div>
+</div>
+<br>
+ <div class="subtitle"><div style="font-size: 35px;font-style: bold;text-align: center;font-family: Comic Sans MS;color: #22223b;" >Job Experience</div>
+<br> 
+<div class="job">
+<br>
+	<div class="eall2">
+	<div class="e"><b><center>浩元教育館</center></b></div>
+	<br>
+		<div class="detail">
+			 原本我是浩元教育補習班的學生， 在補習的其間<br>和老師們都處的不錯，畢業後的第一份工就是留<br>在浩元幫忙電話招生、發傳單的工作。雖然看似<br>簡單，但要讓在電話另一頭的人能繼續聽你說明<br>、讓人願意拿下你的傳單，也是很不容易的一件<br>事。
+		</div><br>
+		<div class="expt"> 
+			<img src="img/img9.jpg">
+		</div>
+</div>
+	<br>
+	<div class="eall2">
+	<div class="e"><b><center>全聯福利中心</center></b></div>
+	<br>
+		<div class="detail">
+			 這算是一個充滿酸甜苦辣的一個工作。在裡面待<br>過生鮮區、麵包區、補貨和收銀學到各式各樣的<br>技能，每一個環節都是不同的體驗，尤其是待人<br>處世、解決問題的能力。
+		</div><br><br><br>
+		<div class="expt">
+			<img src="img/img10.jpg">
+		</div>
+</div>
+</div>
+<br>
+<div class="subtitle"><div style="font-size: 35px;font-style: bold;text-align: center;font-family: Comic Sans MS;color: #22223b;" >Collections</div>
+<br> 
+<div class="collect">
+<br>
+	<div class="eall3">
+	<div class="e"><b><center>網頁程式設計期末專案</center></b></div>
+	<br>
+		<div class="detail">
+			使用MySQL和JSP寫出購物網站的程式，是大學以<br>來第一個具有挑戰性的實作網站，從零到有很有成就感。
+		</div><br>
+		<div class="expt">
+  		<img src="img/img8.jpg">
+			
+		</div>
+</div>
+	<br>
+	<div class="eall3">
+	<div class="e"><b><center>多媒體程式設計期中專案</center></b></div>
+	<br>
+		<div class="detail">
+			使用html和css製作網頁前端設計，也是第一個分組<br>的前端作品，從拍片、美編、後製......等都是自己的心血。
+		</div><br>
+		<div class="expt">
+     <img src="img/img7.png" > 
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<br><br>
+<footer>
+	<div style="background-color: #D8E2DC;font-size: 17px;margin:5px 5px 5px 5px; color: #335C67;"><center><br>Tel：+886-928-277-386 │ E-mail：xinxin021555@gmail.com</center><br></div>
+</footer>
+
+	
+</body>
+</html>
